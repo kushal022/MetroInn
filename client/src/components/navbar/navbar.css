@@ -1,0 +1,42 @@
+.navbar{
+    height: 50px;
+    background-color: #003580;
+    display: flex;
+    justify-content: center;
+}
+
+.navContainer{
+    width: 100%;
+    max-width: 1024px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    
+}
+
+.navItems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.userImg{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.navBtn{
+    /* margin-left: 20px; */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #003580;
+}
