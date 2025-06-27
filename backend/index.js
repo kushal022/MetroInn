@@ -4,13 +4,19 @@ const app = express();
 
 //TODO: Import Middleware for cookie-parser:
 const cookieParser = require('cookie-parser')
-//TODO:5. Use Middleware:
-app.use(cookieParser()); //! cookie parser
-app.use(express.json());
+
+//TODO:1. Import and config dotenv:
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
+
+//TODO:2. Import MongoDB connection:
+require('./config/db');
 
 //todo: import cors:
 const cors = require('cors');
 app.use(cors());
+app.use(cookieParser()); //! cookie parser
+app.use(express.json());
 // app.use(cors(
 //     {
 //         origin: ['*'], // specify the domain where you want to use the cookies
@@ -21,13 +27,7 @@ app.use(cors());
 //     }
 // ));
 
-//TODO:1. Import and config dotenv:
-require('dotenv').config();
-const PORT = process.env.PORT || 3000;
 
-
-//TODO:2. Import MongoDB connection:
-require('./config/db');
 
 //TODO:3. Import Collections:
 const UserCollection = require('./models/userModel'); 
