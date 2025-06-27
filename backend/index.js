@@ -4,15 +4,22 @@ const app = express();
 
 //TODO: Import Middleware for cookie-parser:
 const cookieParser = require('cookie-parser')
-//TODO:5. Use Middleware:
-app.use(cookieParser()); //! cookie parser
-app.use(express.json());
+
+//TODO:1. Import and config dotenv:
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
+
+//TODO:2. Import MongoDB connection:
+require('./config/db');
 
 //todo: import cors:
 const cors = require('cors');
+// app.use(cors());
+app.use(cookieParser()); //! cookie parser
+app.use(express.json());
 app.use(cors(
     {
-        origin: ['http://localhost:5173','http://localhost:5174'], // specify the domain where you want to use the cookies
+        origin: ['*','https://tubular-taffy-6515fe.netlify.app'], // specify the domain where you want to use the cookies
         methods: ['POST', 'PUT', 'GET', 'OPTIONS','DELETE', 'HEAD'],
         credentials: true, // enable setting the cookies
         secure: false, // only send cookies over http, not https
@@ -20,13 +27,7 @@ app.use(cors(
     }
 ));
 
-//TODO:1. Import and config dotenv:
-require('dotenv').config();
-const PORT = process.env.PORT || 3000;
 
-
-//TODO:2. Import MongoDB connection:
-require('./config/db');
 
 //TODO:3. Import Collections:
 const UserCollection = require('./models/userModel'); 
