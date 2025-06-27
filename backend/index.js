@@ -12,7 +12,7 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors(
     {
-        origin: ['http://localhost:5173','http://localhost:5174'], // specify the domain where you want to use the cookies
+        origin: ['*'], // specify the domain where you want to use the cookies
         methods: ['POST', 'PUT', 'GET', 'OPTIONS','DELETE', 'HEAD'],
         credentials: true, // enable setting the cookies
         secure: false, // only send cookies over http, not https
