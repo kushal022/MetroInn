@@ -10,15 +10,16 @@ app.use(express.json());
 
 //todo: import cors:
 const cors = require('cors');
-app.use(cors(
-    {
-        origin: ['*'], // specify the domain where you want to use the cookies
-        methods: ['POST', 'PUT', 'GET', 'OPTIONS','DELETE', 'HEAD'],
-        credentials: true, // enable setting the cookies
-        secure: false, // only send cookies over http, not https
-        exposedHeaders: ['set-cookie']
-    }
-));
+app.use(cors());
+// app.use(cors(
+//     {
+//         origin: ['*'], // specify the domain where you want to use the cookies
+//         methods: ['POST', 'PUT', 'GET', 'OPTIONS','DELETE', 'HEAD'],
+//         credentials: true, // enable setting the cookies
+//         secure: false, // only send cookies over http, not https
+//         exposedHeaders: ['set-cookie']
+//     }
+// ));
 
 //TODO:1. Import and config dotenv:
 require('dotenv').config();
