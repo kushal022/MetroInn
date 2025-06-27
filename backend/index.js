@@ -14,18 +14,18 @@ require('./config/db');
 
 //todo: import cors:
 const cors = require('cors');
-app.use(cors());
+// app.use(cors());
 app.use(cookieParser()); //! cookie parser
 app.use(express.json());
-// app.use(cors(
-//     {
-//         origin: ['*'], // specify the domain where you want to use the cookies
-//         methods: ['POST', 'PUT', 'GET', 'OPTIONS','DELETE', 'HEAD'],
-//         credentials: true, // enable setting the cookies
-//         secure: false, // only send cookies over http, not https
-//         exposedHeaders: ['set-cookie']
-//     }
-// ));
+app.use(cors(
+    {
+        origin: ['*','https://tubular-taffy-6515fe.netlify.app'], // specify the domain where you want to use the cookies
+        methods: ['POST', 'PUT', 'GET', 'OPTIONS','DELETE', 'HEAD'],
+        credentials: true, // enable setting the cookies
+        secure: false, // only send cookies over http, not https
+        exposedHeaders: ['set-cookie']
+    }
+));
 
 
 
